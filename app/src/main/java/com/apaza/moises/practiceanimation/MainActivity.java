@@ -57,9 +57,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
 
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
         int id = item.getItemId();
 
         //noinspection SimplifiableIfStatement
@@ -74,18 +71,16 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.button:
-                Snackbar.make(v, "Animation", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-                ObjectAnimator.ofFloat(image, "alpha", 0f)
-                        .setDuration(500)
-                        .start();
+                AnimationUtils.animation1(image);
                 break;
             case R.id.button2:
-                ObjectAnimator.ofFloat(image, "alpha", 1f)
+                AnimationUtils.animation2(image);
+                /*ObjectAnimator.ofFloat(image, "alpha", 1f)
                         .setDuration(500)
-                        .start();
+                        .start();*/
                 break;
             case R.id.button3:
+                AnimationUtils.animation3(image);
                 break;
         }
     }
