@@ -16,19 +16,19 @@
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="Anim1"
             android:id="@+id/button" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="Anim2"
             android:id="@+id/button2" />
 
         <Button
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="New Button"
+            android:text="Anim3"
             android:id="@+id/button3" />
 
     </LinearLayout>
@@ -38,22 +38,92 @@
         android:layout_height="wrap_content"
         android:id="@+id/imageAnimate"
         android:layout_gravity="center"
+        android:visibility="visible"
         android:src="@drawable/ic_river"/>
 
     <LinearLayout
         android:id="@+id/signUpLayout"
         android:orientation="vertical"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="20dp"
+        android:layout_height="match_parent"
+        android:layout_margin="20dp"
+        android:gravity="bottom"
         android:background="@android:color/darker_gray"
-        android:layout_gravity="center_horizontal|bottom">
+        android:layout_gravity="center_horizontal|bottom"
+        android:visibility="visible">
+
+        <LinearLayout
+            android:id="@+id/layout3"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:visibility="gone">
+
+            <ImageView
+                android:id="@+id/image5"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/ic_river"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout2"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top"
+            android:visibility="visible">
+
+            <ImageView
+                android:id="@+id/image4"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/manjinbuu"/>
+
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/layout1"
+            android:orientation="horizontal"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_gravity="center_horizontal|top">
+
+            <ImageView
+                android:id="@+id/image1"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/manjinbuu"/>
+            <ImageView
+                android:id="@+id/image2"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/manjinbuu"/>
+            <ImageView
+                android:id="@+id/image3"
+                android:layout_width="0dp"
+                android:layout_weight="1"
+                android:layout_height="100dp"
+                android:layout_gravity="center"
+                android:src="@drawable/manjinbuu"/>
+
+        </LinearLayout>
 
         <Button
-            android:layout_width="wrap_content"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Sign Up"
-            android:id="@+id/button4"
+            android:text="Pick up here"
+            android:id="@+id/pick"
             android:layout_gravity="center_horizontal" />
     </LinearLayout>
 

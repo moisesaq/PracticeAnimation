@@ -1,9 +1,6 @@
 package com.apaza.moises.practiceanimation;
 
-import android.animation.ObjectAnimator;
 import android.os.Bundle;
-import android.support.design.widget.FloatingActionButton;
-import android.support.design.widget.Snackbar;
 import android.support.v7.app.AppCompatActivity;
 import android.support.v7.widget.Toolbar;
 import android.view.View;
@@ -15,9 +12,10 @@ import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
-    private Button anim1, anim2, anim3;
+    private Button btnAnim1, btnAnim2, btnAnim3, pick;
     private ImageView image;
     private LinearLayout signUpLayout;
+    private LinearLayout ly1, ly2, ly3;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -25,27 +23,25 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
 
-        FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
         setup();
     }
 
     private void setup(){
-        anim1 = (Button)findViewById(R.id.button);
-        anim1.setOnClickListener(this);
-        anim2 = (Button)findViewById(R.id.button2);
-        anim2.setOnClickListener(this);
-        anim3 = (Button)findViewById(R.id.button3);
-        anim3.setOnClickListener(this);
+        btnAnim1 = (Button)findViewById(R.id.button);
+        btnAnim1.setOnClickListener(this);
+        btnAnim2 = (Button)findViewById(R.id.button2);
+        btnAnim2.setOnClickListener(this);
+        btnAnim3 = (Button)findViewById(R.id.button3);
+        btnAnim3.setOnClickListener(this);
+        pick = (Button)findViewById(R.id.pick);
+        pick.setOnClickListener(this);
         image = (ImageView)findViewById(R.id.imageAnimate);
         signUpLayout = (LinearLayout)findViewById(R.id.signUpLayout);
+
+        ly1 = (LinearLayout)findViewById(R.id.layout1);
+        ly1.setOnClickListener(this);
+        ly2 = (LinearLayout)findViewById(R.id.layout2);
+        ly3 = (LinearLayout)findViewById(R.id.layout3);
     }
 
     @Override
@@ -82,6 +78,20 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
             case R.id.button3:
                 AnimationUtils.animation3(image);
                 break;
+            case R.id.pick:
+                AnimationUtils.animation2(ly2);
+                break;
         }
     }
+
+    /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
+        fab.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
+                        .setAction("Action", null).show();
+            }
+        });
+
+        setup();*/
 }
