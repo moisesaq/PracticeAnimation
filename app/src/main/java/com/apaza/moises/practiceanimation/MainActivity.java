@@ -7,13 +7,14 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
 public class MainActivity extends AppCompatActivity implements View.OnClickListener{
 
     private Button btnAnim1, btnAnim2, btnAnim3, pick;
-    private ImageView image;
+    private ImageButton image;
     private LinearLayout signUpLayout;
     private LinearLayout ly1, ly2, ly3;
     @Override
@@ -35,7 +36,7 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         btnAnim3.setOnClickListener(this);
         pick = (Button)findViewById(R.id.pick);
         pick.setOnClickListener(this);
-        image = (ImageView)findViewById(R.id.imageAnimate);
+        image = (ImageButton)findViewById(R.id.imageAnimate);
         signUpLayout = (LinearLayout)findViewById(R.id.signUpLayout);
 
         ly1 = (LinearLayout)findViewById(R.id.layout1);
@@ -70,13 +71,15 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
                 AnimationUtils.animation1(image);
                 break;
             case R.id.button2:
-                AnimationUtils.animation2(image);
+                //AnimationUtils.animation2(image);
+                AnimationUtils.animation5(image, btnAnim2);
                 /*ObjectAnimator.ofFloat(image, "alpha", 1f)
                         .setDuration(500)
                         .start();*/
                 break;
             case R.id.button3:
-                AnimationUtils.animation3(image);
+                //AnimationUtils.animation3(image);
+                AnimationUtils.animation5(image, btnAnim3);
                 break;
             case R.id.pick:
                 AnimationUtils.animation2(ly2);

@@ -3,4 +3,27 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <color name="colorDisconnectedBackground">#FF0000</color>
+    <color name="colorDisconnectedForeground">#FFFFFF</color>
+    <color name="whiteSmoke">#F5F5F5</color>
+    <color name="orangeDark">#FF8C00</color>
+    <color name="orange">#FFA500</color>
+    <color name="orangeChat">#FF8F00</color>
+    <color name="orangeBubble">#FCDAA6</color>
+    <color name="grayChat">#E0E0E0</color>
+    <color name="colorToolTip">#FFFFFF</color>
+    <color name="colorToolTipBackground">#009A81</color>
+    <color name="transparentGray">#B4666666</color>
+    <color name="transparentLightGray">#B4999999</color>
+
+
+    <color name="grayTechno">#BDBDBD</color>
+    <color name="blueFacebook">#3B5998</color>
+    <color name="redG">#D34836</color>
+    <color name="red">#F44336</color>
+    <color name="redDark">#B20000</color>
+    <color name="transparentTechno">#80000000</color>
+    <color name="greenReconnect">#00FF00</color>
+
 </resources>

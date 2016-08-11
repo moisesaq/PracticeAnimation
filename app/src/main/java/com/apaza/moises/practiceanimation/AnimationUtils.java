@@ -71,6 +71,14 @@ public class AnimationUtils {
         animator.setDuration(500);
         animator.setInterpolator(new AccelerateDecelerateInterpolator());
         animator.start();
-
     }
+
+    public static void animation5(View view1, View view2){
+        //ObjectAnimator animator = ObjectAnimator.ofFloat(view1, "X", view1.getX(), view2.getX());
+        ObjectAnimator animator = ObjectAnimator.ofFloat(view1, "translationX", -view2.getWidth());
+        animator.setDuration(500);
+        animator.setInterpolator(new AccelerateDecelerateInterpolator());
+        animator.start();
+    }
+
 }
