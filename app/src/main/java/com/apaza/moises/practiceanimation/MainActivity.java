@@ -7,6 +7,7 @@ import android.view.View;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.widget.Button;
+import android.widget.ImageButton;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
@@ -46,10 +47,10 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     public void onClick(View v) {
         switch (v.getId()){
             case R.id.btn_translate:
-                AnimationUtils.animation1(imageView);
+                AnimationUtils.translateAnimationY(imageView);
                 break;
             case R.id.btn_scale:
-                AnimationUtils.animation2(imageView);
+                AnimationUtils.scaleAnimation(imageView);
                 break;
             case R.id.btn_fade:
                 AnimationUtils.rotateAnimationY(imageView);

@@ -75,7 +75,7 @@ public class AnimationUtils {
         animator.start();
     }
 
-    public void scaleAnimation(View view) {
+    public static void scaleAnimation(View view) {
         ObjectAnimator anim1 = ObjectAnimator.ofFloat(view, "scaleX", 1.7f, 1.0f);
         ObjectAnimator anim2 = ObjectAnimator.ofFloat(view, "scaleY", 1.7f, 1.0f);
         //ObjectAnimator animColor = ObjectAnimator.ofObject(view, "backgroundColor", new ArgbEvaluator(),Color.parseColor("#8B0000"), Color.parseColor("#FF0000"));
@@ -91,4 +91,5 @@ public class AnimationUtils {
         });
         animatorSet.start();
     }
+
 }
