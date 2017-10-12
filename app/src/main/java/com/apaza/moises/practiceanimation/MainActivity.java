@@ -10,43 +10,24 @@ import android.widget.Button;
 import android.widget.ImageView;
 import android.widget.LinearLayout;
 
-public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+import butterknife.BindView;
+import butterknife.OnClick;
 
-    private Button btnAnim1, btnAnim2, btnAnim3, pick;
-    private ImageView image;
-    private LinearLayout signUpLayout;
-    private LinearLayout ly1, ly2, ly3;
+public class MainActivity extends AppCompatActivity implements View.OnClickListener{
+    private static final String TAG = MainActivity.class.getSimpleName();
+
+    @BindView(R.id.toolbar) Toolbar toolbar;
+    @BindView(R.id.image_view) ImageView imageView;
+
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        Toolbar toolbar = (Toolbar) findViewById(R.id.toolbar);
         setSupportActionBar(toolbar);
-
-        setup();
-    }
-
-    private void setup(){
-        btnAnim1 = (Button)findViewById(R.id.button);
-        btnAnim1.setOnClickListener(this);
-        btnAnim2 = (Button)findViewById(R.id.button2);
-        btnAnim2.setOnClickListener(this);
-        btnAnim3 = (Button)findViewById(R.id.button3);
-        btnAnim3.setOnClickListener(this);
-        pick = (Button)findViewById(R.id.pick);
-        pick.setOnClickListener(this);
-        image = (ImageView)findViewById(R.id.imageAnimate);
-        signUpLayout = (LinearLayout)findViewById(R.id.signUpLayout);
-
-        ly1 = (LinearLayout)findViewById(R.id.layout1);
-        ly1.setOnClickListener(this);
-        ly2 = (LinearLayout)findViewById(R.id.layout2);
-        ly3 = (LinearLayout)findViewById(R.id.layout3);
     }
 
     @Override
     public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
         getMenuInflater().inflate(R.menu.menu_main, menu);
         return true;
     }
@@ -54,8 +35,6 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
     @Override
     public boolean onOptionsItemSelected(MenuItem item) {
         int id = item.getItemId();
-
-        //noinspection SimplifiableIfStatement
         if (id == R.id.action_settings) {
             return true;
         }
@@ -63,35 +42,18 @@ public class MainActivity extends AppCompatActivity implements View.OnClickListe
         return super.onOptionsItemSelected(item);
     }
 
-    @Override
+    @OnClick({R.id.btn_translate, R.id.btn_scale, R.id.btn_fade})
     public void onClick(View v) {
         switch (v.getId()){
-            case R.id.button:
-                AnimationUtils.animation1(image);
+            case R.id.btn_translate:
+                AnimationUtils.animation1(imageView);
                 break;
-            case R.id.button2:
-                AnimationUtils.animation2(image);
-                /*ObjectAnimator.ofFloat(image, "alpha", 1f)
-                        .setDuration(500)
-                        .start();*/
+            case R.id.btn_scale:
+                AnimationUtils.animation2(imageView);
                 break;
-            case R.id.button3:
-                AnimationUtils.animation3(image);
-                break;
-            case R.id.pick:
-                AnimationUtils.animation2(ly2);
+            case R.id.btn_fade:
+                AnimationUtils.rotateAnimationY(imageView);
                 break;
         }
     }
-
-    /* FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
-        fab.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Snackbar.make(view, "Replace with your own action", Snackbar.LENGTH_LONG)
-                        .setAction("Action", null).show();
-            }
-        });
-
-        setup();*/
 }
